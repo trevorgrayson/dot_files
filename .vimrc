@@ -4,13 +4,15 @@ set backspace=indent,eol
 "; fi
 "source ~/.vim/online.vim
 "source ~/.vim/matchit.vim
-set tabstop=2
-set nowrap
 set sw=2
-set cindent
+set tabstop=2
+set expandtab
+set nowrap
+"set cindent
 set nu
 set hlsearch
 set smartcase
+colorscheme asuldark
 syntax on
 autocmd FileType * exec('setlocal dict+=~/.vim/dict/'.expand ('<amatch>').'.vim')
 ":NoMatchParen
