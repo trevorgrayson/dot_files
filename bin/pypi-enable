@@ -1,0 +1,1 @@
+mv ~/.pip/pip.conf.bck ~/.pip/pip.conf 2>/dev/null

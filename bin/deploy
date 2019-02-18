@@ -1,0 +1,14 @@
+if ! [ -d .git ]; then
+  echo "which project?"
+  read project
+  cd ~/projects/$project
+fi
+
+if [ -d .git ]; then
+  git checkout develop
+  git pull --rebase origin develop
+  git checkout master
+  git pull --rebase origin master
+  git merge develop
+  git push origin master
+fi

@@ -1,0 +1,21 @@
+from tkinter import *
+from tkinter.ttk import *
+ 
+window = Tk()
+window.title("Deployment Checklist")
+ 
+window.geometry('350x200')
+ 
+chk_state = BooleanVar()
+chk_state2 = BooleanVar()
+ 
+chk_state.set(False) #set check state
+ 
+
+for r in range(3):
+   for c in range(4):
+      Checkbutton(window, text='R%s/C%s'%(r,c),
+         ).grid(row=r,column=c)
+window.mainloop(  )
+ 
+window.mainloop()

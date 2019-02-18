@@ -1,0 +1,4 @@
+git checkout develop
+git pull --rebase
+git merge -
+git push origin develop

@@ -1,0 +1,1 @@
+curl -H "Content-Type: application/xml" -u trevor.grayson:7de4ba8b5fbe76db78d9b4c7e96cda62 https://garson.prod.hulu.com/job/Partnerships/job/partner-account-mapper/rssAll

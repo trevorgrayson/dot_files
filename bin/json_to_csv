@@ -1,0 +1,29 @@
+#!/usr/bin/python
+
+import json
+import sys
+
+with open(sys.argv[1], 'r') as jsons:
+  for line in jsons:
+    data = json.loads(line)
+
+    fields = [
+      unicode(data['program_title']),
+      unicode(""),
+      unicode(data['episode_title']),
+      unicode(data['scheduled_start']),
+      unicode(data['episode_description']),
+      unicode(data['rating']),
+
+      #unicode(data['series_title']),
+      #unicode(data['series_premiere']),
+      #unicode(data['title']),
+      #unicode(data['premiere']),
+      #unicode(data['description']),
+      #unicode(data['rating']),
+      #unicode(data['tms_id']),
+    ]
+
+    out = u'"' + u'","'.join(fields) + u'"\n'
+    out.encode('utf-8')
+    sys.stdout.write(out)

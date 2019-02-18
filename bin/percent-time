@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+
+from Tkinter import *
+import datetime
+
+
+def getPercent():
+  now = datetime.datetime.now()
+  return round((now.hour * 10000 + now.minute * 100 + now.second) / 240000.0 * 100, 2)
+
+
+root = Tk()
+value = StringVar()
+value.set("%s%%" % getPercent())
+w = Label(root, textvariable=value, font=("Helvetica", 16))
+w.pack()
+
+
+def setPercent():
+  value.set("%s%%" % getPercent())
+  root.after(60*1000, setPercent)
+
+
+getPercent()
+
+
+setPercent()
+root.mainloop()
