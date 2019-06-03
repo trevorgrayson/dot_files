@@ -12,7 +12,6 @@ set nowrap
 set nu
 set hlsearch
 set smartcase
-colorscheme asuldark
 syntax on
 autocmd FileType * exec('setlocal dict+=~/.vim/dict/'.expand ('<amatch>').'.vim')
 ":NoMatchParen
@@ -118,3 +117,5 @@ augroup END
 hi MatchParen ctermbg=red guibg=red
 set mps+=<:>
 "set spell
+
+map <f2> :vsp<enter>:VTreeExplore<enter>:vertical resize 30<enter>
