@@ -4,6 +4,7 @@ set backspace=indent,eol
 "; fi
 "source ~/.vim/online.vim
 "source ~/.vim/matchit.vim
+set noequalalways
 set sw=2
 set tabstop=2
 set expandtab
@@ -52,7 +53,6 @@ map <C-6> 6gt
 map <C-7> 7gt
 map <C-8> 8gt
 map <C-9> 9gt
-map <C-t> :tabnew<CR>
 
 map <C-Up> dd<Up>P
 map <C-Down> ddp
@@ -118,4 +118,62 @@ hi MatchParen ctermbg=red guibg=red
 set mps+=<:>
 "set spell
 
+function! Wowie()
+    if bufwinnr('VTreeExplore') > 0
+      echo "Already open"
+    endif
+endfunction
+
+" Defines a command to save the current dims:
+" command! SaveVimDims let g:last_lines=&lines | let g:last_columns=&columns
+
+" Saves the dims on startup:
+" au VimEnter * SaveVimDims
+
+" Calls the func below, each the win is resized:
+au VimResized * call VimResized_Func()
+
+function! VimResized_Func()
+    " Gets the area of the last dims:
+    " let last_area = g:last_lines * g:last_columns
+
+    " Saves the new dims:
+    " SaveVimDims
+
+    " Gets the area of the new dims:
+    " let cur_area = g:last_lines * g:last_columns
+
+    " Compares the areas:
+    " if cur_area < last_area
+        " do something when shrinking
+    " else
+        " do something when growing
+    " endif
+endf
+
 map <f2> :vsp<enter>:VTreeExplore<enter>:vertical resize 30<enter>
+map <f3> :make test<enter>
+map <f4> :Wowie<enter>
+set mouse=a
+" set clipboard=unnamed
+set sw=4
+set ts=4
+set si
+
+execute pathogen#infect()
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_python_checkers = ['pylint', 'mypy']
+" pip install --user mypy pylint
+" npm i -g eslint
+"npm i -g estraverse estraverse-fb eslint-plugin-react babel-eslint

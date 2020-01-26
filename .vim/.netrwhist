@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/Users/trevorgrayson/projects/openfire/src/eqnComponents'
+let g:netrw_dirhist_1='/Users/trevorgrayson/projects/ds-py-models/specs/fixtures/loadersaver'
+let g:netrw_dirhist_0='/Users/trevorgrayson/projects/ds-py-models/src/loadersaver/hermes'
+let g:netrw_dirhist_9='/Users/trevorgrayson/projects/ds-py-models/specs/fixtures/df/spark/subjects'
+let g:netrw_dirhist_8='/Users/trevorgrayson/projects/ds-py-models/src/logger'
+let g:netrw_dirhist_7='/Users/trevorgrayson/projects/ds-py-models/.venv/nltk/tokenize'
+let g:netrw_dirhist_6='/Users/trevorgrayson/projects/ds-py-models/.venv/nltk'
+let g:netrw_dirhist_5='/Users/trevorgrayson/projects/ds-py-models/.venv'
+let g:netrw_dirhist_4='/Users/trevorgrayson/projects/ds-py-models/.venv/nltk-3.4.5.dist-info'
+let g:netrw_dirhist_3='/Users/trevorgrayson/projects/ds-py-models/.venv'
